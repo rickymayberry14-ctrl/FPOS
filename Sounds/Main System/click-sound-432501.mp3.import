@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duuviiqqaffcw"
+path="res://.godot/imported/click-sound-432501.mp3-cbe8d878b7cbe444a23195f46f003876.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Main System/click-sound-432501.mp3"
+dest_files=["res://.godot/imported/click-sound-432501.mp3-cbe8d878b7cbe444a23195f46f003876.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

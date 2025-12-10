@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://deoe2f7am5gvc"]
+
+[ext_resource type="Texture2D" uid="uid://ddep5toipfd4j" path="res://Images/BackGrounds/Default BG.jpg" id="1_h20oy"]
+[ext_resource type="PackedScene" uid="uid://ca2qryjpq7rsb" path="res://Scenes/home_button.tscn" id="2_34bqn"]
+[ext_resource type="PackedScene" uid="uid://bxqbpva1j3qal" path="res://Scenes/swipe_to_unlock.tscn" id="3_c5kxq"]
+
+[node name="Lock" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(159.75, 239.74997)
+scale = Vector2(0.5007813, 0.42297533)
+texture = ExtResource("1_h20oy")
+
+[node name="Home Button" parent="." instance=ExtResource("2_34bqn")]
+top_level = true
+
+[node name="Swipe To Unlock" parent="." instance=ExtResource("3_c5kxq")]
+position = Vector2(161, 427)
+
+[node name="BackGround Color" parent="Swipe To Unlock" index="0"]
+position = Vector2(-1.2499979, 0)
+scale = Vector2(0.55815965, 0.11111109)
+
+[node name="Finish" parent="Swipe To Unlock" index="3"]
+position = Vector2(108.99999, 0)
+
+[node name="Start" parent="Swipe To Unlock" index="4"]
+position = Vector2(-110, 0)
+
+[editable path="Swipe To Unlock"]

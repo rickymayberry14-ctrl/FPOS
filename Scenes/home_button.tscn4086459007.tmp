@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca2qryjpq7rsb"]
+
+[ext_resource type="Script" uid="uid://csodwdewprv2g" path="res://Scripts/home_button.gd" id="1_h4mwy"]
+[ext_resource type="Texture2D" uid="uid://sjldmsv11vqm" path="res://Images/Other/Home Button.png" id="2_h4mwy"]
+[ext_resource type="AudioStream" uid="uid://duuviiqqaffcw" path="res://Sounds/Main System/click-sound-432501.mp3" id="3_5nfol"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h4mwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nfol"]
+size = Vector2(58, 22)
+
+[node name="Home Button" type="Node2D"]
+script = ExtResource("1_h4mwy")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0.050666694, 0.16, 1)
+position = Vector2(160, 465.99997)
+scale = Vector2(320, 27.999987)
+texture = SubResource("CanvasTexture_h4mwy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5nfol")
+
+[node name="Button" type="TouchScreenButton" parent="."]
+top_level = true
+position = Vector2(128, 453)
+scale = Vector2(0.10666669, 0.09121627)
+texture_normal = ExtResource("2_h4mwy")
+passby_press = true
+action = "Home"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(160, 466)
+shape = SubResource("RectangleShape2D_5nfol")
+
+[connection signal="pressed" from="Button" to="." method="Home"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

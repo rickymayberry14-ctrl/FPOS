@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca2qryjpq7rsb"]
+
+[ext_resource type="Script" uid="uid://sppuh0eig7vc" path="res://Home Button.gd" id="1_h4mwy"]
+[ext_resource type="Texture2D" uid="uid://dnvf0mlhu1rme" path="res://icon.svg" id="2_5nfol"]
+
+[node name="Home Button" type="Node2D"]
+script = ExtResource("1_h4mwy")
+
+[node name="Home Button" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("2_5nfol")
+action = "Home Pressed"

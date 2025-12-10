@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://deoe2f7am5gvc"]
+
+[ext_resource type="Script" uid="uid://brrwturacbldn" path="res://Scripts/lock.gd" id="1_2c8ga"]
+[ext_resource type="Texture2D" uid="uid://ddep5toipfd4j" path="res://Images/BackGrounds/Default BG.jpg" id="2_o0qqj"]
+[ext_resource type="PackedScene" uid="uid://ca2qryjpq7rsb" path="res://Scenes/home_button.tscn" id="3_jjtwf"]
+[ext_resource type="PackedScene" uid="uid://bxqbpva1j3qal" path="res://Scenes/swipe_to_unlock.tscn" id="4_omw47"]
+[ext_resource type="Texture2D" uid="uid://o73thm8005kq" path="res://Images/For LockScreen/TransParent.png" id="5_c6o0u"]
+[ext_resource type="FontFile" uid="uid://cp6yxl0kx7s6r" path="res://Fonts/Helvetica.ttf" id="6_gu56o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2c8ga"]
+font = ExtResource("6_gu56o")
+font_size = 50
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0qqj"]
+font = ExtResource("6_gu56o")
+font_size = 12
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_2c8ga")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(159.75, 239.74997)
+scale = Vector2(0.5007813, 0.42297533)
+texture = ExtResource("2_o0qqj")
+
+[node name="Home Button" parent="." instance=ExtResource("3_jjtwf")]
+top_level = true
+
+[node name="Swipe To Unlock" parent="." instance=ExtResource("4_omw47")]
+position = Vector2(161, 427)
+
+[node name="BackGround Color" parent="Swipe To Unlock" index="0"]
+position = Vector2(-1.2499979, 0)
+scale = Vector2(0.55815965, 0.11111109)
+
+[node name="Finish" parent="Swipe To Unlock" index="3"]
+position = Vector2(108.99999, 0)
+
+[node name="Start" parent="Swipe To Unlock" index="4"]
+position = Vector2(-110, 0)
+
+[node name="TransParent" type="Sprite2D" parent="."]
+position = Vector2(165, 114.999985)
+scale = Vector2(0.66727275, 0.3652052)
+texture = ExtResource("5_c6o0u")
+
+[node name="SystemTime" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 140.0
+offset_top = 36.0
+offset_right = 180.0
+offset_bottom = 59.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_2c8ga")
+
+[node name="SystemDate" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 140.0
+offset_top = 80.0
+offset_right = 180.0
+offset_bottom = 131.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_o0qqj")
+
+[editable path="Swipe To Unlock"]
